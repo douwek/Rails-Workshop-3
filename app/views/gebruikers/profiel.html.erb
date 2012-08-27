@@ -1,0 +1,21 @@
+<h1><%= @gebruiker.naam %></h1>
+
+<p>
+  <b>Email:</b>
+  <%= @gebruiker.email %>
+</p>
+
+<%= link_to 'Nieuwe Post', new_post_path, :class => "btn btn-primary btn-large" %>
+
+<% @posts.each do |post| %>
+<div class="row">
+  <div class="span12">
+  <h3><%= post.bericht %></h3>
+  <p>Geplaatst op <%= post.created_at %></p>
+  <hr>
+  </div>
+</div>
+<% end %>
+
+<%= link_to 'Profiel Aanpassen', edit_gebruiker_path(@gebruiker) %> |
+<%= link_to 'Terug', gebruikers_path %>

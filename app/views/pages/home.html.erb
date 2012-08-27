@@ -1,0 +1,17 @@
+<div class="hero-unit">
+  <h1>Welkom!</h1>
+  <p>Dit is de Microblogging web applicatie van Linux Magazine.</p>
+  <p><%= link_to "Registreren", registreer_url, :class => "btn btn-large btn-primary" %></p>
+</div>
+
+
+<% @posts.each do |post| %>
+<div class="row">
+  <div class="span12">
+  <h3><%= post.bericht %></h3>
+  <p>Geplaatst door <%= link_to gebruikersnaam(post.gebruiker_id), "gebruikers/show/"+post.gebruiker_id.to_s %> op <%= post.created_at %></p>
+  <hr>
+  </div>
+</div>
+<% end %>
+

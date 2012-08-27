@@ -1,0 +1,25 @@
+<h1>Gebruikers</h1>
+
+<table class="table">
+  <tr>
+    <th>Naam</th>
+    <th>Email</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @gebruikers.each do |gebruiker| %>
+  <tr>
+    <td><%= gebruiker.naam %></td>
+    <td><%= gebruiker.email %></td>
+    <td><i class="icon-user"></i> <%= link_to 'Show', gebruiker %></td>
+    <td><i class="icon-edit"></i> <%= link_to 'Edit', edit_gebruiker_path(gebruiker) %></td>
+    <td><i class="icon-trash"></i> <%= link_to 'Destroy', gebruiker, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'Nieuwe Gebruiker', new_gebruiker_path, :class => "btn btn-primary btn-large" %>

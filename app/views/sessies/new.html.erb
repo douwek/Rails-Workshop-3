@@ -1,0 +1,10 @@
+<h1>Login</h1>
+
+<%= form_tag(sessies_path, {:class => "well"}) do %>
+  <%= label_tag :email %><br />
+  <%= text_field_tag :email, params[:email] %>
+  <%= label_tag :wachtwoord %><br />
+  <%= password_field_tag :wachtwoord %>
+  <br><br>
+  <%= submit_tag "Login", :class => "btn btn-primary btn-large" %>
+<% end %>
